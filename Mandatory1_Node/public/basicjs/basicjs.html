@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/global.css">
+    <title>Basicjs</title>
+</head>
+<body>
+    <!-- Topnav --> 
+    <div class="topnav">
+        <a href="/">Forside</a>
+        <a class="active" href="/basicjs">Basic JS</a>
+        <a href="/at_lave_en_server">At lave en server</a>
+
+    </div>
+
+    <!-- Subnav --> 
+    <div class="subnav">
+        <a class="active" href="/basicjs">Basic JS</a>
+        <a href="/strings">Strings</a>
+        <a href="/objekter">Objekter</a>
+        <a href="/arrays">Arrays</a>
+        <a href="/loops">Loops</a>
+        <a href="/funktioner">Funktioner</a>
+    </div>
+    
+    <div class="main-div">
+        <p>Vi startede forløbet med at snakke om de grundlæggende dataelementer i JavaScript.</p>
+<p>Et simpelt, men kraftfuldt værktøj, er forståelsen af hvad forskellen på keywords’ne const og let.</p>
+<p>Deklarerer man en variabel som en const, kan den værdi man tildeler til variablen ikke ændres efterfølgende.</p>
+<p>Det kan den godt, hvis variablen er af typen let.</p>
+<p>Både const og let, befinder sig i det scope de er deklareret i, i modsætning til variabler af typen var.</p>
+<p>Deklaration af variabler af typen var, er generelt en dårlig ide, da denne vil få et globalt scope hvilket kan give problemer.</p>
+
+<h3><br> ASI</h3>
+<p>JavaScript er et sprog som indeholder ASI (Automatic Semicolon Insertion). </p>
+<p>Dette betyder at hvis en linje ikke slutter med semikolon, indsættes det automatisk af compiler’en.</p>
+<p>Følgende 2 stykker kode, vil derfor give samme resultat</p>
+<div>
+    <p class="code_ex">const fact = "You are learning javascript!”;</p>
+</div>
+<div>
+    <p class="code_ex">const fact = "You are learning javascript!"</p>
+</div>
+
+        
+    </div>
+    
+</body>
+</html>

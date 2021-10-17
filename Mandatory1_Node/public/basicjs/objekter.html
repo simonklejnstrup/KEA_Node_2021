@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <title>Loops</title>
+</head>
+<body>
+    <!-- Topnav --> 
+    <div class="topnav">
+        <a href="/">Forside</a>
+        <a class="active" href="/basicjs">Basic JS</a>
+        <a href="/at_lave_en_server">At lave en server</a>
+        <a href="/theory">Theory</a>
+    </div>
+
+    <!-- Subnav --> 
+    <div class="subnav">
+        <a href="/basicjs">Basic JS</a>
+        <a href="/strings">Strings</a>
+        <a class="active" href="/objekter">Objekter</a>
+        <a href="/arrays">Arrays</a>
+        <a href="/loops">Loops</a>
+        <a href="/funktioner">Funktioner</a>
+    </div>
+    
+    <div class="main-div" >
+        <p>Objekter i JavaScript ligner meget json filer. </p>
+        <p>Der er dog den forskel, at key-typen i JS-objektet ikke behøver at være omsluttet af gåseøjne. </p>
+        <p>Der er dog ingen problemer hvis man alligevel beslutter sig for at gøre det.</p>
+        
+        <p class="code_ex">const me = {"name": “Simon”} </p>
+        <p>Ovenstående virker på samme måde som:</p>
+        <p class="code_ex">const me = {name: “Simon”}</p>
+        <p>Har man brug for at tilgå en værdi i et objekt, kan dot-notation bruges til dette.</p>
+        
+        <p class="code_ex">console.log(me.name)</p>
+        <p>Vil man ændre en værdi i et objekt kan det også gøres ved hjælp af dot-notation:</p>
+        
+        <p class="code_ex">me.name = “Søren”</p>
+        <p>På samme måde kan man tilføje en attribut til et objekt som det ikke allerede indeholder:</p>
+        
+        <p class="code_ex">me.age = 33 </p>
+        <p>Ovenstående vil få objektet til at se sådan her ud</p>
+        <p class="code_ex">me = {"name": “Simon”, “age”: 33}</p>
+        <p>For at slette en attribut, bruges keyword’et ‘delete’:</p>
+        
+        <p class="code_ex">delete me.age</p>
+        <p>Ovenstående vil få objektet til at se sådan her ud</p>
+        <p class="code_ex">me = {"name": “Simon”}</p>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <title>Funktioner</title>
+</head>
+<body>
+    <!-- Topnav --> 
+    <div class="topnav">
+        <a href="/">Forside</a>
+        <a class="active" href="/basicjs">Basic JS</a>
+        <a href="/at_lave_en_server">At lave en server</a>
+    </div>
+
+    <!-- Subnav --> 
+    <div class="subnav">
+        <a href="/basicjs">Basic JS</a>
+        <a href="/strings">Strings</a>
+        <a href="/objekter">Objekter</a>
+        <a href="/arrays">Arrays</a>
+        <a href="/loops">Loops</a>
+        <a class="active" href="/funktioner">Funktioner</a>
+    </div>
+    
+    <div class="main-div" >
+    <p>En funktion deklareres med keyword’et function. </p>
+    <p>Dernæst defineres navnet på funktionen efterfulgt af et sæt parenteser som indeholder de argumenter som funktionen tager imod. </p>
+    <p>I kroppen af funktionen skrives den kode som funktionen skal udføre og hvad den evt skal returnere.</p>
+    <p>Her er et eksempel på en funktion som ikke tager nogen argumenter:</p>
+    <p class="code_ex">
+        function hello() {
+    <br>        console.log("Hello World")
+    <br>    }
+    </p>
+    <p>Her er et eksempel på en funktion som tager et argument og returnerer argumentet plus strengen “Hej”</p>
+    <p class="code_ex">
+        function hello(s) {
+    <br>        return s + “Hej”
+    <br>    }
+    </p>
+    <p>En funktion kan også tildeles som værdi til en variabel, som her:</p>
+    <p class="code_ex">
+        const greeting = function hello() {
+    <br>        console.log("Hello World")
+    <br>   }
+    </p>
+    <p>Kaldes variablen, vil funktionen køre. Kaldets syntaks, ser således ud:</p>
+    <p class="code_ex">greeting()</p>
+
+    <p>En fuktion kan også tage en anden funktion som reference. </p>
+    <p>En sådan syntaks vil se ud som nedenstående:</p>
+    <p class="code_ex">
+            function interact(anyFunctionReference){
+    <br>        anyFunctionReference();
+    <br>   }
+    </p>
+    <p>Kaldet til denne funktion kan se således ud:</p>
+    <p class="code_ex">interact(greeting) </p>
+    <p>Denne funktion vil printe “Hello World” i konsollen.</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <title>Loops</title>
+</head>
+<body>
+    <!-- Topnav --> 
+    <div class="topnav">
+        <a href="/">Forside</a>
+        <a class="active" href="/basicjs">Basic JS</a>
+        <a href="/at_lave_en_server">At lave en server</a>
+        <a href="/theory">Theory</a>
+    </div>
+
+    <!-- Subnav --> 
+    <div class="subnav">
+        <a href="/basicjs">Basic JS</a>
+        <a class="active" href="/strings">Strings</a>
+        <a href="/objekter">Objekter</a>
+        <a href="/arrays">Arrays</a>
+        <a href="/loops">Loops</a>
+        <a href="/funktioner">Funktioner</a>
+    </div>
+    
+    <div class="main-div" >
+        <p>Vi har lært at string kan konvertere til floats ved hjælp af funktionen parseFloat(),</p>
+        <p>som tager en string som argument. </p>
+        <p>Antallet af decimaler på outputtet kan desuden styret med endelsen .toFixed(),</p>
+        <p>som tager en int som argument og returnerer resultatet med samme antal decimaler som int’en i argumentet.</p>
+        <p> Skal vi bruge den numeriske værdi af en string, kan dette opnåes på 2 måder.</p>
+        <h3>Ex 1</h3>
+        <div>
+            <p class="code_ex">parseInt(“102a43434") </p>
+        </div> 
+        <p>Denne funktion returnerer værdien 102, idet funktionen stopper da den møder bogstavet ‘a’ i tekststykket</p>
+        <h3>Ex 2</h3>
+        <div>
+            <p class="code_ex">Number(“102a")</p>
+        </div> 
+        <p>Denne funktion fejler, idet argumentet ikke er et tal pga bogstavet i slutningen. </p>
+        <p>Derfor til outputtet være NaN (Not a Number).  </p>
+        <p>Gives disse 2 funktioner et validt argument (fx “102”) vil de begge returnere int’en 102.</p>
+        
+    </div>
+    
+</body>
+</html>

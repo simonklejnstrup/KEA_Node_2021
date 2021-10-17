@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+*{font-family: 'Montserrat', sans-serif;
+    margin:0;
+    padding:0;
+    background-color: #fdfbf9;
+    
+}
+
+
+.topnav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    background-color: #fdfbf9;
+    display: block;
+    text-align: center;
+}
+/* Style the links inside the navigation bar */
+.topnav a {
+    display: inline-block;
+    color: #fefff3;
+    background-color: rgba(153, 68, 215, 0.3);
+    border-radius: 25px;
+    text-align: center;
+    padding: 14px 16px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    font-size: 28px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #9944D7B6;
+    border-radius: 25px;
+    color: #ffffff;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #9944D7B6;
+    border-radius: 25px;
+    color: white;
+}
+
+.subnav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    background-color: #fdfbf9;
+    display: block;
+    text-align: center;
+}
+/* Style the links inside the navigation bar */
+.subnav a {
+    display: inline-block;
+    color: #fefff3;
+    background-color: rgba(153, 68, 215, 0.3);
+    border-radius: 25px;
+    text-align: center;
+    padding: 8px 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.subnav a:hover {
+    background-color: #9944D7B6;
+    border-radius: 25px;
+    color: #ffffff;
+}
+
+/* Add a color to the active/current link */
+.subnav a.active {
+    background-color: #9944D7B6;
+    border-radius: 25px;
+    color: white;
+}
+
+.main-div {
+    margin-top: 1em;
+    margin-left: 3em;
+    margin-bottom: 1em;
+    margin-right: 3em;
+}
+
+p {
+    line-height: 2em;
+}
+
+.code_ex{
+    background-color: rgb(212, 160, 210);
+    border-radius: 10px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    
+
+    font-weight: 600;
+    display: inline-block;
+}
+
+.terminal_ex {
+    background-color: rgb(197, 195, 195);
+    border-radius: 10px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    
+
+    font-weight: 600;
+    display: inline-block;
+}

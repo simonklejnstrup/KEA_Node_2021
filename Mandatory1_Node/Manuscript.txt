@@ -1,0 +1,146 @@
+Node.js - Mandatory 1
+
+
+Basic JS
+Vi startede forløbet med at snakke om de grundlæggende dataelementer i JavaScript.
+Et simpelt, men kraftfuldt værktøj, er forståelsen af hvad forskellen på keywords’ne const og let.
+Deklarerer man en variabel som en const, kan den værdi man tildeler til variablen ikke ændres efterfølgende.
+Det kan den godt, hvis variablen er af typen let.
+Både const og let, befinder sig i det scope de er deklareret i, i modsætning til variabler af typen var.
+Deklaration af variabler af typen var, er generelt en dårlig ide, da denne vil få et globalt scope hvilket kan give problemer.
+JavaScript er et sprog som indeholder ASI (Automatic Semicolon Insertion). Dette betyder at hvis en linje ikke slutter med semikolon, indsættes det automatisk af compiler’en.
+Følgende 2 stykker kode, vil derfor give samme resultat
+const fact = "You are learning javascript!”;
+const fact = "You are learning javascript!"
+
+Strings
+Vi har lært at string kan konvertere til floats ved hjælp af funktionen parseFloat(), som tager en string som argument. Antallet af decimaler på outputtet kan desuden styret med endelsen .toFixed() som tager en int som argument og returnerer resultatet med samme antal decimaler som int’en i argumentet.
+Skal vi bruge den numeriske værdi af en string, kan dette opnåes på 2 måder.
+Ex 1
+parseInt(“102a43434") returnerer værdien 102, idet funktionen stopper da den møder bogstavet ‘a’ i tekststykket
+Ex 2
+Number(“102a") fejler idet argumentet ikke er et tal pga bogstavet i slutningen. Derfor til outputtet være NaN (Not a Number).  
+Gives disse 2 funktioner et validt argument (fx “102”) vil de begge returnere int’en 102.
+
+Objekter
+Objekter i JavaScript ligner meget json filer. Der er dog den forskel, at key-typen i JS-objektet ikke behøver at være omsluttet af gåseøjne. Der er dog ingen problemer hvis man alligevel beslutter sig for at gøre det.
+Ex
+const me = {"name": “Simon”} 
+virker på samme måde som 
+const me = {name: “Simon”}
+Har man brug for at tilgå en værdi i et objekt, kan dot-notation bruges til dette.
+Ex
+console.log(me.name)
+Vil man ændre en værdi i et objekt kan det også gøres ved hjælp af dot-notation:
+Ex
+me.name = “Søren”
+På samme måde kan man tilføje en attribut til et objekt som det ikke allerede indeholder:
+Ex
+me.age = 33 
+Vil få objektet til at se sådan her ud
+me = {"name": “Simon”, “age”: 33}
+For at slette en attribut, bruges keyword’et ‘delete’:
+Ex
+delete me.age
+Vil få objektet til at se sådan her ud
+me = {"name": “Simon”}
+
+
+Arrays
+Et array kan initialiseres med en variabeltype, et variabelnavn og en række værdier, omkranset af square brackets:
+Ex
+const letters = [“a","b","c"]
+Idet JavaScript er loosely typed, behøver vi ikke definere at variablen er af typen array. Det ligger implicit i måde hvorpå vi værdigiver variablen.
+De funktioner vi som oftest vil bruge på arrays er:
+push(): Tager en værdi som argument of tilføjer værdien til enden af array’et
+Ex
+letters.push(“d”) -> letters = [“a”,”b”,"c", “d"]
+pop(): Fjerner det sidste element fra array’et
+Ex
+letters.pop() -> letters = [“a”,”b","c"]
+indexOf(): Tager en værdi fra array’et som argument og returnerer det index som værdien ligger på:
+Ex
+letters.indexOf(“b”) vil returnere 1 (da starter tællingen på 0 når vi tæller index pladser i et array)
+splice(): Fjerner og/eller tilføjer værdier fra/til et array. 
+Tager 3 argumenter: 
+En int som beskriver fra hvilket index på array’et der skal tilføjes/fjernes 
+En int som beskriver hvor mange af de nuværende værdier på arrayet der skal fjernes.
+En eller flere nye værdier som skal tilføjes til arrayet.
+Ex
+letters = [“a”,”b”,"c"]
+letters.splice(1, 1, “nytB”)
+letters = [“a”,”nytB”,"c"]
+Vil man kopiere et array er det vigtigt at man ikke bare tildeler array til et nyt variabelnavn, som vist herunder:
+newLettersArray = letters
+Dette vil kun kopierere referencen til array og vil give det problem at hvis der ændres i array’et letters, vil samme ændring forekomme i array’et newLettersArray.
+For at sørge for at det er selve indholdet af et array som bliver kopieret,  kan en af syntakser benyttes:
+const newLettersArray = letters.slice()
+const newLettersArray = Array.from(letters)
+const newLettersArray = […letters]
+
+Loops
+Når vi arbejder med arrays, vil vi tit bruge loops til at iterere igennem de indeholdte værdier.
+Et for-loop indeholder følgende:
+En variabel som indeholder en int der bestemmer hvilket index i array’et vi står på (oftest set med variabelnavnet ‘i’)
+En beskrivelse af hvornår loopet skal stoppe
+En beskrivelse af hvordan vi vil have at index-variablen skal inkrementere.
+Et loop kan fx se således ud:
+for (let i = 0; i < letters.length; i++) {
+   console.log(letters[i]
+  } 
+
+Kroppen af loop’et indeholder den kode der skal udføres for hver værdi i array’et.
+Dette kan også indbefatte conditionals (if sætninger) og yderligere loops (nested loops)
+
+
+Funktioner
+En funktion deklareres med keyword’et function. Dernæst defineres navnet på funktionen efterfulgt af et sæt parenteser som indeholder de argumenter som funktionen tager imod. I kroppen af funktionen skrives den kode som funktionen skal udføre og hvad den evt skal returnere. Eksempel på en funktion som ikke tager nogen argumenter
+function hello() {
+    console.log("Hello World")
+}
+Eksempel på en funktion som tager et argument og returnerer argumentet plus strengen “Hej”
+function hello(s) {
+    return s + “Hej”
+}
+En funktion kan også tildeles som værdi til en variabel, som her:
+const greeting = function hello() {
+    console.log("Hello World")
+}
+Kaldes variablen, vil funktionen køre. Kaldets syntaks, ser således ud:
+greeting()
+
+En fuktion kan også tage en anden funktion som reference. En sådan syntaks vil se ud som nedenstående:
+function interact(anyFunctionReference){
+    anyFunctionReference();
+}
+Kaldet til denne funktion kan se således ud:
+interact(greeting) 
+Denne funktion vil printe “Hello World” i konsollen.
+
+
+At lave en server
+Til at lave en server, bruger vi framework'et Express. Dette er et framework specielt designet til web applikationer.
+For at kunne benytte os af Express, må vi installere det.
+I vores terminal, stiller vi os i mappen som indeholder vores projekt. 
+Med følgende kommando, skabes en package.json fil, som indeholder vores dependency:
+$ npm install express
+I mappen laver vi også et JavaScript dokument som skal indeholde vores applikation. Vi kalder det app.js og vi kan bruge følgende 
+kommando til at skabe dokumentet:
+$ touch app.js
+I toppen af vores app.js fil, importerer vi Express således:
+const express = require("express")
+Og vi færdiggører opsætningen af Express med denne linje:
+const app = express()
+Agter vi at bruge json filer i vores app, sætter vi appen op til at kunne parse json på følgende måde:
+app.use(express.json())
+
+Vil vi lave en get-metode gøres det ved hjælp af en arrow function. Ideen i sådan en er at koden på venstre side af pilen betegner funktionens input
+og til højre for pilen, funktionens output.
+Vi kalder app.get, sender en sti i form af en string og sender de to variabelnavne vi vil give hhv brugerens request og vores response.
+Her er et eksempel på dette:
+
+app.get("/", (req, res) => {
+    res.send({ mindIsBlown: true })
+})
+
+

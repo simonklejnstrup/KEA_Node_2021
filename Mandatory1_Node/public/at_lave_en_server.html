@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- Topnav --> 
+    <div class="topnav">
+        <a href="/">Forside</a>
+        <a  href="/basicjs">Basic JS</a>
+        <a class="active" href="/at_lave_en_server">At lave en server</a>
+    </div>
+
+    <div class="main-div" >
+        <p>Til at lave en server, bruger vi framework'et Express. </p>
+        <p>Dette er et framework specielt designet til web applikationer.</p>
+        <p>For at kunne benytte os af Express, må vi installere det.</p>
+        <p>I vores terminal, stiller vi os i mappen som indeholder vores projekt. </p>
+        <p>Med følgende kommando, skabes en package.json fil, som indeholder vores dependency:</p>
+        <p class="terminal_ex">$ npm install express</p>
+        <p>I mappen laver vi også et JavaScript dokument som skal indeholde vores applikation. </p>
+        <p>Vi kalder det app.js og vi kan bruge følgende kommando til at skabe dokumentet:</p>
+        <p class="terminal_ex">$ touch app.js</p>
+        <p>I toppen af vores app.js fil, importerer vi Express således:</p>
+        <p class="code_ex">const express = require("express")</p>
+        <p>Og vi færdiggører opsætningen af Express med denne linje:</p>
+        <p class="code_ex">const app = express()</p>
+        <p>Agter vi at bruge json filer i vores app, sætter vi appen op til at kunne parse json på følgende måde:</p>
+        <p class="code_ex">app.use(express.json())</p>
+        
+        <h3><br> Get</h3>
+        <p>Vil vi lave en get-metode gøres det ved hjælp af en arrow function. </p>
+        <p>Ideen i sådan en er at koden på venstre side af pilen betegner funktionens input.</p>
+        <p>Til højre for pilen, funktionens output.</p>
+        <p>Vi kalder app.get, sender en sti i form af en string og sender de to variabelnavne vi vil give hhv brugerens request og vores response.</p>
+        <p>Her er et eksempel på dette:</p>
+
+        <p class="code_ex">
+            app.get("/", (req, res) => {
+        <br>        res.send({ mindIsBlown: true })
+        <br>    })
+        </p>
+
+        <p>I ovenstående eksempel bruger vi funktionen .send i vores response til at sende et json objekt til vores bruger.</p>
+        <p>Json objektet består af et enkel key-value pair, med key’en “mindIsBlown” og value “true”.</p>
+        <p>Hvis vi skal bruge data fra brugeren, kan dette sendes i en path-variable. </p>
+        <p>Den skrives ind i stien vi giver vores get-funktion, med en kolon foran for at markere at det netop er en path-variable.</p>
+        <p>Syntaksen vil se således ud:</p>
+        <p class="code_ex">
+            app.get ("/favoriteNumber/:favoriteNumber", (req, res) => {
+        <br>        const high = req.params.favoriteNumber === "420" ? "Nice" : "Kikset"
+        <br>        res.send({
+        <br>            number: req.params.favoriteNumber,
+        <br>            nice: high
+        <br>        })
+        <br>    })
+        </p>
+        <p>Denne funktion tjekker om brugerens tilsendte ‘favoriteNumber’ er lig med eller forskellig fra 420.</p>
+        <p>Hvis nummeret er lig med 420, sættes variablen ‘high’ = “Nice”.</p>
+        <p>Sender brugeren et tal som ikke er lig med 420, sættes variablen ‘high’ = “Kikset”.</p>
+        <p>Ved hjælp af vores response’s send-funktion, sendes et json objekt bestående af 2 key-value par.</p>
+        <p>Det første har key’en ‘number’ og ved hjælp af vores request’s parametre, sætter vi value = brugerens tilsendte nummer.</p>
+        <p>Det andet par, har key’en ‘nice’ og value’en sættes til at være udfaldet af tjekket på brugerens nummer som sker på linje 2.</p>
+        <p>For at sende et nummer med, skal brugeren tilføje en skråstreg og et nummer efter hjemmesiden sti. Dette vil se således ud:</p>
+        <p style="font-weight: 600">www.Hjemmeside.dk/favoriteNumber/22</p>
+
+        <h3><br>Get html</h3>
+        <p>Ud over json objekter, kan vi også returnere html-sider.</p>
+        <p>Følgende stykke kode viser hvordan get’eren til denne side, returneres til brugeren når der sendes en request:</p>
+        <p class="code_ex">
+            app.get("/at_lave_en_server", (req, res) => {
+        <br>        res.sendFile(__dirname + "/public/at_lave_en_server.html")
+        <br>    })
+        </p>
+        <p>I ovenstående funktion konkatineres stien med navnet på mappen som html filen ligger i (public) og navnet op selve html filen.</p>
+        <p>Læg mærke til at vi benytter funktionen .sendFile hvor vi før bruge .send.</p>
+
+    </div>
+    
+</body>
+</html>

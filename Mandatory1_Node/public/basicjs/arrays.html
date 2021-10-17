@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <title>Arrays</title>
+</head>
+<body>
+    <!-- Topnav --> 
+    <div class="topnav">
+        <a href="/">Forside</a>
+        <a class="active" href="/basicjs">Basic JS</a>
+        <a href="/at_lave_en_server">At lave en server</a>
+        <a href="/theory">Theory</a>
+    </div>
+
+    <!-- Subnav --> 
+    <div class="subnav">
+        <a href="/basicjs">Basic JS</a>
+        <a href="/strings">Strings</a>
+        <a href="/objekter">Objekter</a>
+        <a class="active" href="/arrays">Arrays</a>
+        <a href="/loops">Loops</a>
+        <a href="/funktioner">Funktioner</a>
+    </div>
+    
+    <div class="main-div" >
+        <p> Et array kan initialiseres med en variabeltype, et variabelnavn og en række værdier, omkranset af square brackets:</p>
+
+<div><p class="code_ex"> const letters = [“a","b","c"] </p></div>
+<p> Idet JavaScript er loosely typed, behøver vi ikke definere at variablen er af typen array.</p> 
+<p>Det ligger implicit i måde hvorpå vi værdigiver variablen.</p>
+<p>De funktioner vi som oftest vil bruge på arrays er:</p>
+<div style="margin-left: 1em;">
+    <p>push(): Tager en værdi som argument of tilføjer værdien til enden af array’et: </p>
+
+<div><p class="code_ex">letters.push(“d”) -> letters = [“a”,”b”,"c", “d"]</p></div>
+<p>pop(): Fjerner det sidste element fra array’et</p>
+
+<div><p class="code_ex">letters.pop() -> letters = [“a”,”b","c"]</p></div>
+<p>indexOf(): Tager en værdi fra array’et som argument og returnerer det index som værdien ligger på:</p>
+
+<div><p class="code_ex">letters.indexOf(“b”)</p></div> 
+<p>Ovenstående funktion vil returnere 1, da starter tællingen på 0 når vi tæller index pladser i et array</p>
+<p>splice(): Fjerner og/eller tilføjer værdier fra/til et array.</p>
+<p>splice() tager 3 argumenter: </p>
+<p> - En int som beskriver fra hvilket index på array’et der skal tilføjes/fjernes </p>
+<p> - En int som beskriver hvor mange af de nuværende værdier på arrayet der skal fjernes.</p>
+<p> - En eller flere nye værdier som skal tilføjes til arrayet.</p>
+
+<div><p class="code_ex">letters = [“a”,”b”,"c"]</p></div>
+<div><p class="code_ex">letters.splice(1, 1, “nytB”)</p></div>
+<div><p class="code_ex">letters = [“a”,”nytB”,"c"]</p></div>
+</div>
+<p>Vil man kopiere et array er det vigtigt at man ikke bare tildeler array til et nyt variabelnavn, som vist herunder:</p>
+<div><p class="code_ex">newLettersArray = letters</p></div>
+<p>Dette vil kun kopierere referencen til array og vil give det problem at hvis der ændres i array’et letters,</p> 
+<p>vil samme ændring forekomme i array’et newLettersArray.</p>
+<p>For at sørge for at det er selve indholdet af et array som bliver kopieret,  kan en af syntakser benyttes:</p>
+<div><p class="code_ex">const newLettersArray = letters.slice()</p></div>
+<div><p class="code_ex">const newLettersArray = Array.from(letters)</p></div>
+<div><p class="code_ex">const newLettersArray = […letters]</p></div>
+    </div>
+    
+</body>
+</html>

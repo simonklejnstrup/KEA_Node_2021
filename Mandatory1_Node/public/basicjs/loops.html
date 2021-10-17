@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <title>Loops</title>
+</head>
+<body>
+    <!-- Topnav --> 
+    <div class="topnav">
+        <a href="/">Forside</a>
+        <a class="active" href="/basicjs">Basic JS</a>
+        <a href="/at_lave_en_server">At lave en server</a>
+        <a href="/theory">Theory</a>
+    </div>
+
+    <!-- Subnav --> 
+    <div class="subnav">
+        <a href="/basicjs">Basic JS</a>
+        <a href="/strings">Strings</a>
+        <a href="/objekter">Objekter</a>
+        <a href="/arrays">Arrays</a>
+        <a class="active"href="/loops">Loops</a>
+        <a href="/funktioner">Funktioner</a>
+    </div>
+    
+    <div class="main-div" >
+        <p>Når vi arbejder med arrays, vil vi tit bruge loops til at iterere igennem de indeholdte værdier.</p>
+        <p>Et for-loop indeholder følgende:</p>
+        <div style="margin-left: 1em;">
+            <p> - En variabel som indeholder en int der bestemmer hvilket index i array’et vi står på (oftest set med variabelnavnet ‘i’)</p>
+            <p> - En beskrivelse af hvornår loopet skal stoppe</p>
+            <p> - En beskrivelse af hvordan vi vil have at index-variablen skal inkrementere.</p>
+        </div>
+        <p>Et loop kan fx se således ud:</p>
+        <p class="code_ex">
+            for (let i = 0; i < letters.length; i++) {
+        <br>   console.log(letters[i]
+        <br>    }
+        </p>
+
+        <p>Kroppen af loop’et indeholder den kode der skal udføres for hver værdi i array’et.</p>
+        <p>Dette kan også indbefatte conditionals (if sætninger) og yderligere loops (nested loops)</p>
+    </div>
+    
+</body>
+</html>
