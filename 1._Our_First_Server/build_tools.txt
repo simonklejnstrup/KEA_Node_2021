@@ -1,0 +1,20 @@
+Java
+    gradle
+    maven
+    ant
+C##
+    NuGet
+Python
+    pip
+Node
+    Npm
+    Yarn
+
+
+
+Maven:              VS.     Npm / Yarn  
+ 
+pom.xml:            =>      package.json
+Meta-info           =>      Meta-info
+Define dependencies =>      Define dependencies
+Build steps         =>      Script

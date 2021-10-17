@@ -3,11 +3,12 @@
 // --------------------------------------
 // Exercise 1 - Retrieve value from object by key
 
-const myObj = {"message": "Hello, earthling! I bring peace."};
+const myObj = {message: "Hello, earthling! I bring peace.", greeting: "Hello"};
 
 // Log the message 
 
 console.log("Exercise 1: " + myObj.message);
+console.log("Exercise 1: " + myObj[greeting]);
 
 // --------------------------------------
 // Exercise 2 - Defining an object. 
@@ -27,7 +28,6 @@ console.log(me);
 // Exercise 3 - Add a property 
 
 const stackOverflow = {};
-
 stackOverflow.isAllowed = true;
 
 console.log("Exercise 3:")
@@ -43,7 +43,6 @@ const thisSong = {"description": "The best song in the world."}
 // remove the property "description" and add a property called "about" that should say "Just a tribute." 
 
 delete thisSong.description;
-
 thisSong.about = "Just a tribute";
 
 console.log("Exercise 4:")

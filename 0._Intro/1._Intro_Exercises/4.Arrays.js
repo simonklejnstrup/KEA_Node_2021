@@ -30,6 +30,9 @@ const significantMathNumbers = [0, 2.718, 3.14159, 1729];
 
 const index = significantMathNumbers.indexOf(1729);
 
+
+
+
 console.log("Exercise 3: " + index);
 
 // You want to programmatically find where the number 1729 is in the array.
@@ -44,6 +47,11 @@ const diet = ["tomato", "cucumber", "rocket"];
 diet.splice(2, 0, "hamburger", "soda", "pizza");
 
 console.log("Exercise 4: " + diet);
+
+diet.splice(2, 1, "Mælk")
+
+console.log("Exercise 18: " + diet);
+
 
 // You are a programmer. In one line (one statement) insert hamburger, soda and pizza between the elements cucumber and rocket
 
@@ -69,8 +77,22 @@ console.log("Exercise 5: " + diet);
 // Exercise 6 - Copy array
 
 const dinnerTray = [...diet];
+const newDinnerTray = Array.from(diet);
 
 console.log("Exercise 6: " + dinnerTray);
+console.log("Exercise 6.1: " + newDinnerTray);
+
+dinnerTray.pop()
+
+console.log("Exercise 6.2 (popped?): " + newDinnerTray);
+
+newDinnerTray.pop()
+
+console.log("Exercise 6.3 (should be popped?): " + newDinnerTray);
+
+
+
+
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
 
@@ -84,14 +106,11 @@ const lettersExpanded = ["a","b","c", "d", "e", "f", "g", "h"];
 // log every second char in the array starting from b
 
 let log = "";
-
 for (let i = 0; i < lettersExpanded.length; i++) {
-
     if (i%2 == 1){
         log += lettersExpanded[i] + " ";
     } 
   } 
-
   console.log("Exercise 7: " + log);
 
 
@@ -107,16 +126,25 @@ const discardedNumbers = [];
 // else push them to the array discardedNumbers
 
 let anotherLog = "";
-
-
-    for (let i = numbers.length; i >= 0; i--) {
-    
-    if (numbers[i] > 6 || numbers[i] < 0){
+//for (let i = 0; i >= numbers.length; i++) {
+  /*
+    for (let i = numbers.length; i <= 0; i--) {
+    if (numbers[i] > 6 || numbers[i] < 0) {
         anotherLog += numbers[i] + " ";
     } 
     else {
         discardedNumbers.push(numbers[i])
         numbers.splice(i, 1);
+    }
+  }
+  */
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 6 || numbers[i] < 0) {
+        console.log(numbers[i]);
+    } 
+    else {
+        discardedNumbers.push(numbers[i])
     }
   }
   console.log("Exercise 8:")
