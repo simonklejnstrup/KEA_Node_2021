@@ -1,0 +1,22 @@
+#footer-container{
+    background-color: rgb(10, 80, 8);
+
+}
+
+.footer-text {
+    color: rgb(231, 179, 9) !important;
+}
+
+.footer-16371 {
+    padding: 1em 0 2em 0;
+}
+
+.col a {
+    color: rgb(255, 255, 255) !important;
+}
+
+.col {
+    color: rgb(255, 255, 255) !important;
+    padding-bottom: 1em;
+}
+
